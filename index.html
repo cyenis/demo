@@ -1,9 +1,11 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Solicita una Demo de Holded</title>
+    <link rel="stylesheet" href="style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
@@ -32,22 +34,45 @@
             </ul>
         </div>
     </nav>
-
-    <div style="padding:200px">
-        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-        <script>
-            hbspt.forms.create({
-                region: "na1",
-                portalId: "4899159",
-                formId: "1a5f8a4b-ba4b-4772-b08d-d7081cb70a11"
-            });
-        </script>
+    <div style="padding: 50px;">
+        <div class="form-container">
+            <h1>¿Necesitas una demo de Holded?</h1>
+            <p>Deja tu correo electrónico y el tamaño de tu empresa para programar una demostración rápida.</p>
+            <form action="#" method="POST">
+                <div class="buttons">
+                    <input type="radio" id="book_demo" name="demo_option" value="book_demo">
+                    <label for="book_demo" class="option-button">Reservar una demo</label>
+                    <input type="radio" id="watch_video" name="demo_option" value="watch_video">
+                    <label for="watch_video" class="option-button">Ver un video</label>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="email">Correo Electrónico de Trabajo*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="companySize">Tamaño de la Empresa*</label>
+                        <select id="companySize" name="companySize" required>
+                            <option value="">Seleccione</option>
+                            <option value="1">1</option>
+                            <option value="2-5">2-5</option>
+                            <option value="6-10">6-10</option>
+                            <option value="11-25">11-25</option>
+                            <option value="26-50">26-50</option>
+                            <option value="50+">50+</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="submit-button">Enviar solicitud</button>
+            </form>
+        </div>
     </div>
 
-    <!-- Bootstrap JS and its dependencies -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function q(a) { return function () { ChiliPiper[a].q = (ChiliPiper[a].q || []).concat([arguments]) } } window.ChiliPiper = window.ChiliPiper || "submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function (a, b) { a[b] = q(b); return a }, {});
+        ChiliPiper.scheduling("holded", "inbound-router", { title: "¡Gracias! ¿A qué hora te va mejor?" })
+    </script>
+    <script src="https://js.na.chilipiper.com/marketing.js" type="text/javascript" async></script>
 </body>
 
 </html>

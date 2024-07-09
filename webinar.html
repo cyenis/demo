@@ -36,15 +36,41 @@
         </div>
     </nav>
 
+   
     <div style="padding:50px">
-        <iframe width="100%" height="480" frameborder="0"
-            src="https://app.livestorm.co/p/33c99ef3-30e1-43a1-9abb-af5457193daa/form"
+        <iframe id="livestorm-iframe" width="100%" height="480" frameborder="0"
             title="Introducción a Holded | Holded"></iframe>
     </div>
+
+    <script>
+        window.addEventListener('load', function () {
+            // Capture the URL parameter
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const email = urlParams.get("email");
+
+            // Select the iframe element by its id
+            const iframe = document.getElementById('livestorm-iframe');
+
+            if (iframe) {
+                // Set the src attribute of the iframe with the email parameter if it exists
+                iframe.src = email
+                    ? `https://app.livestorm.co/p/33c99ef3-30e1-43a1-9abb-af5457193daa/form?email=${encodeURIComponent(email)}`
+                    : `https://app.livestorm.co/p/33c99ef3-30e1-43a1-9abb-af5457193daa/form`;
+            } else {
+                console.error('Iframe not found');
+            }
+        });
+    </script>
+
+    
     <!-- Bootstrap JS and its dependencies -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+
+
 </body>
 
 </html>
